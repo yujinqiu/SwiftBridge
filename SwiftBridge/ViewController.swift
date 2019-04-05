@@ -7,6 +7,23 @@
 //
 
 import Cocoa
+import HTMLEscaper
+
+extension String {
+    public func escapedHTMLString() -> String? {
+        return self.withCString() {
+            guard let v = escape_html(UnsafeMutablePointer(mutating: $0)) else { return nil }
+            return String(bytesNoCopy: v, length: strlen(v), encoding: .utf8, freeWhenDone: true)
+        }
+    }
+    
+    public func unescapedHTMLString() -> String? {
+        return self.withCString() {
+            guard let v = unescape_html(UnsafeMutablePointer(mutating: $0)) else { return nil }
+            return String(bytesNoCopy: v, length: strlen(v), encoding: .utf8, freeWhenDone: true)
+        }
+    }
+}
 
 class ViewController: NSViewController {
 

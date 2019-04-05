@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE6FFD202256F7B400F77B19 /* libhtmlescaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC3E83C2254D43F00612F97 /* libhtmlescaper.a */; };
 		DEC3E82C2254CE6500612F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3E82B2254CE6500612F97 /* AppDelegate.swift */; };
 		DEC3E82E2254CE6500612F97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3E82D2254CE6500612F97 /* ViewController.swift */; };
 		DEC3E8302254CE6600612F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC3E82F2254CE6600612F97 /* Assets.xcassets */; };
@@ -21,6 +22,9 @@
 		DEC3E8322254CE6600612F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEC3E8342254CE6600612F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEC3E8352254CE6600612F97 /* SwiftBridge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftBridge.entitlements; sourceTree = "<group>"; };
+		DEC3E83B2254CF0B00612F97 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		DEC3E83C2254D43F00612F97 /* libhtmlescaper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhtmlescaper.a; sourceTree = "<group>"; };
+		DEC3E83E2254D4AF00612F97 /* libhtmlescaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libhtmlescaper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6FFD202256F7B400F77B19 /* libhtmlescaper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +42,9 @@
 		DEC3E81F2254CE6500612F97 = {
 			isa = PBXGroup;
 			children = (
+				DEC3E83E2254D4AF00612F97 /* libhtmlescaper.h */,
+				DEC3E83C2254D43F00612F97 /* libhtmlescaper.a */,
+				DEC3E83B2254CF0B00612F97 /* module.modulemap */,
 				DEC3E82A2254CE6500612F97 /* SwiftBridge */,
 				DEC3E8292254CE6500612F97 /* Products */,
 			);
@@ -279,8 +287,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.engineerdrafts.SwiftBridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -297,8 +310,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.engineerdrafts.SwiftBridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
